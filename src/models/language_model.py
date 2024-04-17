@@ -9,6 +9,10 @@ class LanguageModel(AbstractModel):
     def __init__(self, data: Dict[str, str]):
         super().__init__(data)
 
+    @classmethod
+    def list_dicts(cls):
+        return [language.to_dict() for language in cls.find()]
+
     def to_dict(self):
         return {
             "name": self.data["name"],

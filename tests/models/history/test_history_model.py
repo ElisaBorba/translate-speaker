@@ -10,3 +10,4 @@ def test_request_history():
         assert "text_to_translate" in item
         assert "translate_from" in item
         assert "translate_to" in item
+        assert not item["text_to_translate"].islower()

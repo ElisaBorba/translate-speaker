@@ -9,8 +9,4 @@ history_controller = Blueprint("history", __name__)
 def history():
     history_list = HistoryModel.list_as_json()
 
-    test = jsonify(history_list)
-
-    print("PRINTTTT::::::", test)
-
     return jsonify(history_list), 200

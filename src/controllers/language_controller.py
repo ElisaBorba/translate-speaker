@@ -27,6 +27,13 @@ def translate():
         translated = GoogleTranslator(
             source=translate_from, target=translate_to
         ).translate(text_to_translate)
+
+        data = {
+            "text_to_translate": text_to_translate,
+            "translate_from": translate_from,
+            "translate_to": translate_to,
+        }
+
     else:
         text_to_translate = default_values["text_to_translate"]
         translate_from = default_values["translate_from"]
@@ -39,7 +46,7 @@ def translate():
             "translate_to": translate_to,
         }
 
-        HistoryModel(data).save()
+    HistoryModel(data).save()
 
     return render_template(
         "index.html",

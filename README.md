@@ -28,3 +28,7 @@ python3 -m pip install -r dev-requirements.txt
 ```
 docker compose up translate
 ```
+🎲 Popule o banco de dados:
+```
+docker compose exec -it translate python3 src/run_seeds.py
+```
